@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="./style.css">
+    <title>Bootstrap-5</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  .row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+.column img{
+  filter: grayscale(100%);
+  transition: 1s;
+}
+.column img:hover{
+  filter: grayscale(0);
+}
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:100vh;
+  /* transform: translate(-50%,-50%); */
+  overflow: hidden;
+  background-color:lightgray;
+  
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  top:40%;
+left: 30%;
+transform: translate(-50%,-50%);
+  padding: 0;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<body>
+  
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Technical Rahul</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="bootstrap5.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize" href="index.html">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize" href="galary.html">Galary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-capitalize" href="contact.html">contact us</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+
+<!-- *************galery section  ******* -->
+        <section  class="main-heading my-5 ">
+          <div class="text-center">
+              <h1>Galary</h1>
+              <hr class="w-25 mx-auto" >
+          </div>
+
+        <div class="container my-5">
+          <div class="row  mx-auto">
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto">
+              <div class="galary-div column">
+                <figure>              <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            
+                         
+            </div>
+            <div class="col-lg-4 col-md-4 col-10 mx-auto mb-5">
+              <div class="galary-div column">
+                <figure>
+                <img src="https://picsum.photos/350/180" onclick="openModal();currentSlide(1)" 
+                class="hover-shadow cursor">
+                </figure>
+              </div>
+                         
+            </div>
+
+          </div>
+          
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">2 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">3 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">4 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">5 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">6 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">7 / 9</div>
+                <img src="https://picsum.photos/350/180" style="width:100%">
+              </div>
+              
+            
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+        </div>
+      </section>
+       <!-- ***********footer part start******************* -->
+
+       <footer class="bg-secondary text-center text-white fixed-bottom">
+
+        <p>@Copyright By Rahul Bisht</p>
+      </footer>
+
+
+
+ <!-- Popper.js first, then Bootstrap JS -->
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+ <script>
+     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+
+var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+var toastList = toastElList.map(function (toastEl) {
+  return new bootstrap.Toast(toastEl)
+})
+
+toastElList[0].show();
+
+
+// *********************galary***********************
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+
+
+     </script>
+
+</body>
+</html>
